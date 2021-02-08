@@ -7,7 +7,61 @@
     // output: 7
 
 function daysPosition(day, offset) {
-
+    if (offset) {
+        let week = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+        switch(day) {
+            case "monday":
+              return week.indexOf("monday") + 1
+              break;
+            case "tuesday":
+              return week.indexOf("tuesday") + 1
+              break;
+            case "wednesday":
+              return week.indexOf("wednesday") + 1
+              break;
+            case "thursday":
+              return week.indexOf("thursday") + 1
+              break;
+            case "friday":
+              return week.indexOf("friday") + 1
+              break;
+            case "saturday":
+              return week.indexOf("saturday") + 1
+              break;
+            case "sunday":
+              return week.indexOf("sunday") + 1
+              break;
+            default:
+              return "That's not a day of the week"
+          } 
+    } else {
+        let week = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+        switch(day) {
+            case "sunday":
+              return week.indexOf("sunday") + 1
+              break;
+            case "monday":
+              return week.indexOf("monday") + 1
+              break;
+            case "tuesday":
+              return week.indexOf("tuesday") + 1
+              break;
+            case "wednesday":
+              return week.indexOf("wednesday") + 1
+              break;
+            case "thursday":
+              return week.indexOf("Thursday") + 1
+              break;
+            case "friday":
+              return week.indexOf("friday") + 1
+              break;
+            case "saturday":
+              return week.indexOf("saturday") + 1
+              break;
+            default:
+              return "That's not a day of the week"
+          } 
+    }
 }
 
 
@@ -27,7 +81,32 @@ function daysPosition(day, offset) {
  */
 
  function golfScore(score, par) {
-
+    let diff = score-par
+    switch (true) {
+        case diff <= -3:
+          return "Ace"
+          break;
+        case diff == -2:
+          return "Eagle"
+          break;
+        case diff == -1:
+          return "Birdie"
+          break;
+        case diff == 0:
+          return "Par"
+          break;
+        case diff == 1:
+          return "Bogie"
+          break;
+        case diff == 2:
+          return "Double Bogie"
+          break;
+        case diff >= 3:
+          return "Ouch"
+          break;
+        default:
+          return "error"
+      } 
  }
  
 
@@ -52,5 +131,31 @@ function daysPosition(day, offset) {
 let count = 0
 
 function cardCounter(card) {
-
+    switch(card) {
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+            count++
+            break;
+        case '7':
+        case '8':
+        case '9':
+            break;
+        case '10':
+        case 'J':
+        case 'Q':
+        case 'K':
+        case 'A':
+            count--
+            break;
+        default:
+            return "error"
+      }
+      if (count > 0) {
+          return count + " Bet"
+      } else {
+          return count + " Hold"
+      }
 }
